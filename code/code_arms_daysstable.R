@@ -18,4 +18,14 @@ boxplot <- ggplot(data = df_alive, aes(x = arm, y = days_stable, fill = arm)) +
     title = "Days to Stabilization by Treatment Arm Among Survivors"
   )
 
+ggsave(
+  filename = "output/figures/boxplot_arm_days.png",
+  plot = boxplot,
+  width = 8,
+  height = 6,
+  units = "in",
+  dpi = 300,
+  bg = "white"
+)
+
 saveRDS(boxplot, file = here::here("output/figures/boxplot_arm_days.rds"))
